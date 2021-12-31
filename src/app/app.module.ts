@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AgmCoreModule } from '@agm/core';
 
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatBadgeModule } from '@angular/material/badge';
@@ -47,9 +48,18 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { ZComponentComponent } from './components/z-component/z-component.component';
 import { ZDirectiveDirective } from './directives/z-directive.directive';
+import { AgmDirectionModule } from 'agm-direction';
+import { MapDirectionComponent } from './components/map-direction/map-direction.component';
+import { MapSearchComponent } from './components/map-search/map-search.component';
 
 @NgModule({
-  declarations: [AppComponent, ZComponentComponent, ZDirectiveDirective],
+  declarations: [
+    AppComponent,
+    ZComponentComponent,
+    ZDirectiveDirective,
+    MapDirectionComponent,
+    MapSearchComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -91,6 +101,12 @@ import { ZDirectiveDirective } from './directives/z-directive.directive';
     MatStepperModule,
     MatPaginatorModule,
     MatFormFieldModule,
+
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyD5puMd4-7UWd_YJ8UcB4XXd3pFYUxqifQ',
+      libraries: ['places'],
+    }),
+    AgmDirectionModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
