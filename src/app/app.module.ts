@@ -103,7 +103,7 @@ import { MapSearchComponent } from './components/map-search/map-search.component
     MatFormFieldModule,
 
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyD5puMd4-7UWd_YJ8UcB4XXd3pFYUxqifQ',
+      apiKey: 'google-api-key',
       libraries: ['places'],
     }),
     AgmDirectionModule,
